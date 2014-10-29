@@ -5,16 +5,19 @@
 #			   stats and graphs of the data. 
 #-------------------------------------------------------------------------------------------------#
 
-# Packages
+# Clear workspace
+rm(list=ls())
+
+## Packages. Coded to simplify multiple package installation and loading.
 packages <- c("car", "ggplot2")
 install.packages(packages)
 lapply(packages, function(x) library(x, character.only = TRUE, verbose = FALSE))
 
-# Set working dir
+## Set working dir. path.expand gives a bit of flexibility
 setwd(path.expand("~/Dropbox/Share\ Folder/colsci_rep/"))
 
-# Load data 
-setwd(paste(getwd(), "/data", sep = ""))
-coldat <- read.csv("col_data.csv", header = TRUE)[c(1:60),c(1:42)]
+## Load data 
+coldat <- read.csv("data/col_data.csv", header = TRUE)
 str(coldat)
 
+## Process data
