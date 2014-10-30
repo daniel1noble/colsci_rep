@@ -1,0 +1,16 @@
+---
+output: pdf_document
+---
+##The transparency of colour reporting in plant and animal taxa
+
+Daniel Noble^1^, Tom White^1^, Kate Umbers^1,2,5^, James O'Hanlon^1^, Rhiannon Dalrymple^3^, Daniel Zurek^4^
+
+**Authors are currently not in order for publication
+
+^1^ Department of Biological Sciences, Macquarie University, Sydney, NSW, Australia 
+^2^ Department of Biological Sciences, University of Wollogong, Wollogong, NSW, Australia
+^3^ School of BEEs, University of New South Wales, Sydney, NSW, Australia
+^4^ Biological Sciences, University of Pennsylvania
+
+^5^ Author to whom correspondance should be addressed:
+Umbers?
