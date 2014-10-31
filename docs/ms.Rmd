@@ -14,7 +14,12 @@ Corresponding Author:
 Keywords: #colsci, visual ecology, spectrophotometry, tetrahedral color space, quantum catch, pigment, structural color, thermoregulation, signaling, PAVO, colormetrics, visual modeling, melanism, sexual selection.
 
 ##Abstract
+```{r, eval = TRUE, echo = FALSE}
+x <- rnorm(200, 0, 1)
+x
+```
 
+`r round(mean(x), digits = 2)`
  
 
 ##Introduction
