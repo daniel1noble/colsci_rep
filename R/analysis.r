@@ -21,7 +21,7 @@ coldat <- read.csv("data/col_data.csv", header = TRUE)
 str(coldat)
 
 ## Process data. Remove irrelevant variables for analaysis. 
-# Remove justification columns, which are just simply for our use and complicate analysis
+## Remove justification columns, which are just simply for our use and complicate analysis
 col_just   <- colnames(coldat)[c(grep("_just", colnames(coldat)))]
 coldat     <- coldat[,! colnames(coldat) %in% col_just][-c(2:13, 35:36)] # Additioally remove details on analysis and details on papers, but keep paper number.
 
