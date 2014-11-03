@@ -23,6 +23,6 @@ str(coldat)
 ## Process data. Remove irrelevant variables for analaysis. 
 # Remove justification columns, which are just simply for our use and complicate analysis
 col_just   <- colnames(coldat)[c(grep("_just", colnames(coldat)))]
-coldat     <- coldat[,! colnames(coldat) %in% col_just][-c(35:36)] # Additioally remove details on analysis.
+coldat     <- coldat[,! colnames(coldat) %in% col_just][-c(2:13, 35:36)] # Additioally remove details on analysis and details on papers, but keep paper number.
 
 ## Things we need to check. The studies categorized as "multiple" Need to make clear what the values (0 or 1) correspond to camera or specs. 
