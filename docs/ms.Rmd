@@ -37,11 +37,20 @@ We developed a list of metrics we deemed critical to be reported for reproducibi
 
 ###Table 1
 ```{r, eval = TRUE, echo = FALSE}
-tab1 <- read.csv("/Users/danielnoble/Dropbox/6_Share_Folder/colsci_rep/output/tables/table1.csv", header = TRUE)
-table1 <- xtable(tab1)
-print(table1, type = "pdf")
+#tab1 <- read.csv("/Users/danielnoble/Dropbox/6_Share_Folder/colsci_rep/output/tables/table1.csv", header = TRUE)
+#table1 <- xtable(tab1)
+#print(table1, type = "pdf")
 ```
 ##What is reporting like in the literature? (what do people do?)
 
-To determine the current state of methods reporting in the field we searched for papers from 2013 in 20 journals (see Table X): We used the Boolean search terms colour*, color* or spectra* and searched for these in the title or abstract from each of the journal home pages. Our search returned a total of X papers. To review the large number of papers returned from the searches, journals were haphazardly divided up between the authors. Upon reading abstracts we determined which studies took empirical measures of colour (via photography or spectrophotometry) and discarded those that did not. In order to reduce the risk of observer bias in our scoring. Papers were then read and reassessed by a second author and a third, three times in total. Any discrepancies between the assessor scores and the inclusion of papers with more obscure or uncommon methodologies, were discussed and agreed upon. We then tabulated what details of the methods were reported against our criteria.
+To determine the current state of methods reporting in the field we searched for papers from 2013 in 20 journals (**Animal Behaviour**,**Behavioral Ecology**,**Journal of Experimental Biology**,**BIology Letters**, **Proceedings of the Royal Society B: Biological Sciences**,**Biological Journal of the Linnean Society**,**Ethology**, **PLoS ONE**, ): We used the Boolean search terms colour*, color* or spectra* and searched for these in the title or abstract from each of the journal home pages. Our search returned a total of X papers. To review the large number of papers returned from the searches, journals were haphazardly divided up between the authors. Upon reading abstracts we determined which studies took empirical measures of colour (via photography or spectrophotometry) and discarded those that did not. In order to reduce the risk of observer bias in our scoring. Papers were then read and reassessed by two additional authors (three times in total). Any discrepancies between the assessor scores and the inclusion of papers with more obscure or uncommon methodologies, were discussed and agreed upon. We then tabulated what details of the methods were reported against our criteria.
+
+
+
+
+
+
+
+
+
 
