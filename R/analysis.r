@@ -44,6 +44,8 @@ camModel  <- (sum(coldat$cam_model, na.rm = TRUE)/(cam+both))*100
 ## Of the studies using a spec, what proportion report the light source. Note that column needs to be extracted because it combines cameras and specs
 
 DatSpec   <- subset(coldat, stud_type == 1 |stud_type == 3)
+
+# Note that we need to change the rows where spec and cemera differ
 specLight <- (sum(DatSpec$light_source)/nrow(DatSpec))*100
 
 ## Of the studies using a cam, what proportion report the light source. Note that column needs to be extracted because it combines cameras and specs
@@ -53,7 +55,7 @@ CamLight  <- (sum(DatCam$light_source, na.rm = TRUE)/nrow(DatCam))*100
 
 ## Of Studies spec'ing what proportion report a dark standard
 drk_std   <- (sum(DatSpec$dark_std)/(nrow(DatSpec)))*100
-#white_std <- sum(DatSpec$white_std)/(nrow(DatSpec))
+white_stdspec <- (sum(DatSpec$white_stdspec)/nrow(DatSpec))*100
 
 ## What proportion of studies specing report the num of specs averaged
 
@@ -62,6 +64,13 @@ specAVG <- (sum(DatSpec$specpix_avg)/nrow(DatSpec))*100
 ## What proportion of studies using a camera report the num of pixs averaged
 
 camAVG <- (sum(DatCam$specpix_avg)/nrow(DatCam))*100
+
+## How do studies analyse colour?
+analysisType <- table(coldat$analysis_type)
+
+## How about just spec studies because they can do visual modelling, or colorimetric
+
+analysisTypeSpec <- table(DatSpec$analysis_type)
 
 ## What proportion of spec studies reported 1) the integration time, spec angle and distance?
 
