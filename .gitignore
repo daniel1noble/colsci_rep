@@ -2,3 +2,5 @@
 *docs/output
 *docs/ms.pdf
 *docs/.Rhistory
+*.log
+*.md
