@@ -4,7 +4,7 @@ geometry: margin=0.75in
 output: pdf_document
 ---
 
-#The transparency of colour reporting in plant and animal taxa
+#The transparency of methods-reporting in studies measuring biological colouration
 
 Rhiannon L. Dalrymple^1,6^, Daniel W. A. Noble^2,6^, James C. O’Hanlon ^2,6^, Kate D. L. Umbers^3,4,6^, Thomas E. White^2,6^, Daniel B. Zurek^5,6^
 
