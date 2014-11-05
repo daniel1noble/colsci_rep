@@ -5,5 +5,6 @@
 - [ ] Tighten the intro right up [TOM]
 - [ ] Make sure Kate knows how to use github? [TEAM]
 - [ ] References [TOM]. No-go yet. 
-- [ ] Kate's test run  
+- [ ] Kate's test run!
+  
 
