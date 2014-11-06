@@ -44,22 +44,5 @@ To determine the current state of methods reporting in the field we searched for
  
 Our search returned a total of 216 papers, however, only `r nrow(coldat)` met our criteria and were included in the final analysis. Overall, `r specs+both` studies used a spectrophotometer to measure color, while `r cam+both` used a camera. Of these studies, `r both` quantified color using both a spectrophotometer and a camera. Reporting of the make and model of the spectrophotometer and camera was high (Figure 1 - Specs = `r round(specModel, digits = 2)`% and Cameras = `r round(camModel, digits = 2)`%), however, only `r round(CamLight, digits = 2)`%  and `r round(specLight, digits = 2)`% of camera and spec studies reported a light source. In addition, the number of reflectance spectra and pixels averaged were only reported in `r round(specAVG, digits = 2)`% and `r round(camAVG, digits = 2)`% of the studies, respectively. Surprisingly, of the spec studies, dark standards were only reported in `r round(drk_std, digits = 2)`% of the studies, while white standards were reported in `r round(white_stdspec, digits = 2)`%. Studies quantifying spectral reflectance also often did not report the integration time of the spectrophotmeter (`r round(intTime, digits = 2)`%) or the angle (`r round(angle, digits = 2)`%) or the distance (`r round(dist, digits = 2)`%) the probe was from the color patch. 
 	
-Analysis varied across studies but, overall `r analysisType[1]` analyzed their data by generating colormetric (brightness, hue, chroma) variables whereas `r analysisType[4]` used visual models, `r analysisType[2]` used multiple analysis types (e.g. visual model and colourmetric) and `r analysisType[3]` did other forms of analysis (e.g. RGB, PCA's, GLMMs etc.). Of the studies quantifying colour using spectral reflectance curves `r analysisTypeSpec[1]` used colormetric measures, `r analysisTypeSpec[2]` used multiple analyses, `r analysisTypeSpec[4]` used visual models and `r analysisTypeSpec[3]` used other forms of analysis. 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Analysis varied across studies but, overall `r analysisType[1]` analyzed their data by generating colormetric (brightness, hue, chroma) variables whereas `r analysisType[4]` used visual models, `r analysisType[2]` used multiple analysis types (e.g. visual model and colourmetric) and `r analysisType[3]` did other forms of analysis (e.g. RGB, PCA's, GLMMs etc.). Of the studies quantifying colour using spectral reflectance curves `r analysisTypeSpec[1]` used colormetric measures, `r analysisTypeSpec[2]` used multiple analyses, `r analysisTypeSpec[4]` used visual models and `r analysisTypeSpec[3]` used other forms of analysis. Studies using colormetric measurements defined their measure of brightness, hue and/or chroma in `r round(col_def, digits = 2)`% of the studies. 
 
