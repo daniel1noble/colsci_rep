@@ -77,3 +77,11 @@ analysisTypeSpec <- table(DatSpec$analysis_type)
 intTime <- (sum(DatSpec$int_time)/nrow(DatSpec))*100
 angle   <- (sum(DatSpec$spec_angle)/nrow(DatSpec))*100
 dist    <- (sum(DatSpec$spec_dist)/nrow(DatSpec))*100
+
+## Of colormetric studies how many defined their colormetrics?
+
+col_def <- sum(coldat$colmetric_def, na.rm = TRUE)/(length(coldat$colmetric_def[!is.na(coldat$colmetric_def)]))
+
+## How did studies fair in their reporting of visual models?
+
+DatSpec
