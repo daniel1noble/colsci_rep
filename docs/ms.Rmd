@@ -1,10 +1,4 @@
----
-fontsize: 12pt
-geometry: margin=0.75in
-output: pdf_document
----
-
-#The transparency of methods-reporting in studies measuring biological colouration
+# The transparency of methods-reporting in studies measuring biological colouration
 
 Rhiannon L. Dalrymple^1,6^, Daniel W. A. Noble^2,6^, James C. O’Hanlon ^2,6^, Kate D. L. Umbers^3,4,6^, Thomas E. White^2,6^, Daniel B. Zurek^5,6^
 
@@ -16,9 +10,11 @@ Corresponding Author:
 
 Keywords: #colsci, visual ecology, spectrophotometry, tetrahedral color space, quantum catch, pigment, structural color, thermoregulation, signaling, PAVO, colormetrics, visual modeling, melanism, sexual selection.
 
-##Abstract
+## Abstract
 
-##Introduction
+TEST REFERENCE [@endler_comparing_2005; @endler_convergent_1982]
+
+## Introduction
 Since Thayer (1909), Poulton (1890) and Wallace (YEAR) generations of biologists have endeavored to explain the mechanisms and functions of animal and plant coloration. For these biologists, identifying best practice in measuring color and color pattern and in determining how other species see colour has been a great challenge. Over the past 150 years biologists, both independently and in collaboration with physicists and chemists, have developed a range of techniques used to measure and analyse animal and plant coloration including spectrophotometry (also called spectroradiometry, spectroscopy ETC), photography and visual modeling.  
 
 The application of spectrophotometry to questions in ecology and evolution revolutionized the field (Dyck 1966). Before the widespread use of spectrophotometry researchers assigned categorical color descriptions, arbitrary rankings or scores (e.g. Aldrich & James, 1991; Wheelwright & Janson, 1985) or matched paint swatches or munsell chip ratings based on their own visual assessment (e.g. Key and Day 1954, Burtt 1986). Although no doubt applied carefully, these techniques limited progress in field. For example, many researchers designed color assessment methods specifically for their projects (e.g. Alrich and James 1991) rendering data by different researchers incomparable. This was/is especially problematic when different measurement techniques are used on the same species (e,g, refXXX vs ref XXX). Also, human vision, blind to ultraviolet wavelengths, is inherently different to most other animals such as avian and reptilian tetrachromats and insect trichromats, (Bennett 1994, Douglas and Jeffrey 2014); human perception of color, and variation therein, is not only biologically irrelevant to most systems, but it can lead to erroneous conclusions (Bennett, Cuthill and Norris 1994, Endler 1990).   
@@ -34,11 +30,11 @@ Although relatively easy to implement and potentially powerful, sensory models a
 
 Since the repeatability and transparency of science is paramount, it is imperative that we regularly and constructively reflect on our own practices (Peng, 2009; Alsheikh-Ali et al. 2011; Sandve et al YEAR). The potential for detrimental subjectivity in color measurement and the mathematical opacity of visual models for the average colour scienctist means that, as in any field, is it critical that methods are reported rigorously. Methods reporting should ideally have well defined standards such that sufficient detail is provided to allow comprehensive peer review, precise replication, cross-study comparison and data sharing (REF data sharing papers, Ask Rob Lanfear). The aims of this paper are to (a) review methods reporting in papers published on colour in 2013 from 20 top tier journals and (b) provide a set of recommendations for best-practice in reporting on the most common methods. Our best hope is that this instructional provides a useful set of guidelines to improve the reproducibility and transparency of studies on color.
 
-##Ideal reporting in colour studies 
+## Ideal reporting in colour studies 
 
 We developed a list of metrics we deemed critical to be reported for reproducibility of color methods and analysis loosely based on Andersson and Prager (2006) and Montgomerie (2006) (Table 1 and 2). These included quantitative methods including spectrophotometric and photographic techniques (as in REF), but not qualitative methods such as the use of Munsell chips or paint swatches (as in REF). For visual modeling techniques we characterized a set of criteria required for reproducing the analysis (Table 2). 
 
-##What is reporting like in the literature? 
+## What is reporting like in the literature? 
 
 To determine the current state of methods reporting in the field we searched for papers from 2013 in 23 top color science journals (_Animal Behaviour_, _Behavioral Ecology_, _Journal of Experimental Biology_, _Biology Letters_, _Proceedings of the Royal Society B: Biological Sciences_, _Biological Journal of the Linnean Society_, _Ethology_, _The American Naturalist_, _Ecology Letters_, _Journal of Evolutionary Biology_, _American Journal of Botany_, _Evology and Evolution_, _Oikos_, _Ecology_, _Journal of Ecology_, _Behavioral Ecology and Sociobiology_, _Current Zoology_, _Naturwissenschaften_, _New Phytologist_, _PLoS ONE_, _Evolution_, _Functional Ecology_, _Ethology_). For each of the journals, we used the Boolean search terms 'colour*', 'color*' or 'spectra*' and searched for these in the title or abstract from each of the journal home pages. We read the titles and abstracts of each paper and included only those papers that explicitly used either a spectrophotometer or camera to quantify colour signals. We excluded papers that were: 1) review papers; 2) methodological papers; 3) papers quantifying colour pattern; and 4) papers taking microspectrophotometric measurments of retinal absorbance. To review the large number of papers returned from the searches, journals were haphazardly divided up between the authors. In order to reduce the risk of observer bias in our scoring, papers were read and reassessed by a total of three authors. Any discrepancies between the assessor scores were discussed and agreed upon prior to analysis. We then tabulated what details of the methods were reported against our criteria.
  
@@ -46,7 +42,7 @@ Our search returned a total of 216 papers, however, only `r nrow(coldat)` met ou
 	
 Analysis varied across studies but, overall `r analysisType[1]` analyzed their data by generating colormetric (brightness, hue, chroma) variables whereas `r analysisType[4]` used visual models, `r analysisType[2]` used multiple analysis types (e.g. visual model and colourmetric) and `r analysisType[3]` did other forms of analysis (e.g. RGB, PCA's, GLMMs etc.). Of the studies quantifying colour using spectral reflectance curves `r analysisTypeSpec[1]` used colormetric measures, `r analysisTypeSpec[2]` used multiple analyses, `r analysisTypeSpec[4]` used visual models and `r analysisTypeSpec[3]` used other forms of analysis. Studies using colormetric measurements defined their measure of brightness, hue and/or chroma in `r round(col_def, digits = 2)`% of the studies. 
 
-Most studies using visual models analysed their data using receptor noise models (`r vismod_type[3]` of `r sum(vismod_type)` studies) while others used hexagon (`r vismod_type[1]` studies) or tcs (`r vismod_type[4]` studies). Case specific models were used in `r vismod_type[2]` cases. Overall, `r round(prop_irrad, digits =2)`% reported the type of irradiance, `r round(prop_spvismod, digits = 2)`% the species used in their visual model and `r round(propvis_mod_param, digits = 2)`% made explicit mention of the parameters they used (i.e. cone densities, neural vs quantum catchs etc.) in their methods. The background used in visual models was reported `r round(prop_bkg, digits = 2)`% of the time. The type of visual noise authors assumed was reported in `r round(prop_noise, digits = 2)`% of the studies. In addition, explicit mention of the type of quantum catche (`r round(prop_qcatch, digits = 2)`%) or whether photoreceptor adaptation (`r round(prop_adap, digits = 2)`%) was accounted for in visual models was not common. 
+Most studies using visual models analysed their data using receptor noise models (`r vismod_type[3]` of `r sum(vismod_type)` studies) while others used hexagon (`r vismod_type[1]` studies) or tcs (`r vismod_type[4]` studies). Case specific models were used in `r vismod_type[2]` cases. Overall, `r round(prop_irrad, digits =2)`% reported the type of irradiance, `r round(prop_spvismod, digits = 2)`% the species used in their visual model and `r round(propvis_mod_param, digits = 2)`% made explicit mention of the parameters they used (i.e. cone densities, neural vs quantum catchs etc.) in their methods. The background used in visual models was reported `r round(prop_bkg, digits = 2)`% of the time. The type of visual noise authors assumed was reported in `r round(prop_noise, digits = 2)`% of the studies. In addition, explicit mention of the type of quantum catche (`r round(prop_qcatch, digits = 2)`% of studies) or whether photoreceptor adaptation (`r round(prop_adap, digits = 2)`%) was accounted for in visual models was not common. 
 
 While some of the values reported above seem alarming, it is important to note that papers often made reference to previous work for various methods (`r round(ref_stud, digits = 2)`%) and so these figures are slightly liberal given that referenced work may have comprehensively covered some of these criteria. Despite this, many of the studies that did not reference previous work were lacking in their reporting of many aspects of our criteria suggesting the need for more comprehensive reporting of data collection and analysis methods within studies. 
 
@@ -67,6 +63,7 @@ text(paste(round(dat[1,], digits = 0), "%", sep = ""), x = bp.out, y = round(dat
 mtext("a)", adj = -0.10, padj = -1, cex = 2)
 
 
+<<<<<<< HEAD
 props_analy   <- c(prop_irrad, prop_spvismod, propvis_mod_param, prop_adap, prop_qcatch, prop_bkg, prop_noise)
 
 N_props_analy <- c(length(DatSpec$irrad_type[! is.na(DatSpec$irrad_type)]), length(DatSpec$vis_mod_sp[! is.na(DatSpec$vis_mod_sp)]), length(DatSpec$vis_mod_param[! is.na(DatSpec$vis_mod_param)]), length(DatSpec$vis_mod_adapt[! is.na(DatSpec$vis_mod_adapt)]), length(DatSpec$vis_mod_qcatch[! is.na(DatSpec$vis_mod_qcatch)]), length(DatSpec$vis_mod_bkg[! is.na(DatSpec$vis_mod_bkg)]), length(DatSpec$vis_mod_noise_type[! is.na(DatSpec$vis_mod_noise_type)]))
@@ -83,6 +80,8 @@ text(paste(round(dat_analy[1,], digits = 0), "%", sep = ""), x = bp.out, y = rou
 mtext("b)", adj = -0.10, padj = -1, cex = 2)
 
 ```
+
+## References
 
 
 
