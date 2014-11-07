@@ -13,9 +13,6 @@ packages <- c("car", "ggplot2")
 install.packages(packages)
 sapply(packages, function(x) library(x, character.only = TRUE, verbose = FALSE))
 
-## Set working dir. path.expand gives a bit of flexibility
-setwd(path.expand("~/Dropbox/Share\ Folder/colsci_rep/"))
-
 ## Load data 
 coldat <- read.csv("data/col_data.csv", header = TRUE)
 str(coldat)
@@ -83,6 +80,9 @@ dist    <- (sum(DatSpec$spec_dist)/nrow(DatSpec))*100
 col_def <- (sum(coldat$colmetric_def, na.rm = TRUE)/(length(coldat$colmetric_def[!is.na(coldat$colmetric_def)])))*100
 
 ## How did studies fair in their reporting of visual models?
+
+vismod_type <- table(DatSpec$vis_mod_type)
+
 prop_irrad <- (sum(DatSpec$irrad_type[! is.na(DatSpec$irrad_type)])/length(DatSpec$irrad_type[! is.na(DatSpec$irrad_type)]))*100 # Note that there are a few studies under "multiple" that need to be checked because irrad_type is NA and yet the visual model they report is not given. We should check these.
 
 prop_vismod <- (sum(DatSpec$vis_mod[! is.na(DatSpec$vis_mod)])/length(DatSpec$vis_mod[! is.na(DatSpec$vis_mod)]))*100
@@ -91,19 +91,50 @@ prop_spvismod <- (sum(DatSpec$vis_mod_sp[! is.na(DatSpec$vis_mod_sp)])/length(Da
 
 propvis_mod_param <- (sum(DatSpec$vis_mod_param[! is.na(DatSpec$vis_mod_param)])/length(DatSpec$vis_mod_param[! is.na(DatSpec$vis_mod_param)]))*100
 
+prop_adap <- (sum(DatSpec$vis_mod_adapt[! is.na(DatSpec$vis_mod_adapt)])/length(DatSpec$vis_mod_adapt[! is.na(DatSpec$vis_mod_adapt)]))*100
+
+prop_qcatch <- (sum(DatSpec$vis_mod_qcatch[! is.na(DatSpec$vis_mod_qcatch)])/length(DatSpec$vis_mod_qcatch[! is.na(DatSpec$vis_mod_qcatch)]))*100
+
+prop_bkg <- (sum(DatSpec$vis_mod_bkg[! is.na(DatSpec$vis_mod_bkg)])/length(DatSpec$vis_mod_bkg[! is.na(DatSpec$vis_mod_bkg)]))*100
+
+prop_noise <- (sum(DatSpec$vis_mod_noise_type[! is.na(DatSpec$vis_mod_noise_type)])/length(DatSpec$vis_mod_noise_type[! is.na(DatSpec$vis_mod_noise_type)]))*100
+
 ## Number of studies referencing other work.
 ref_stud <- (sum(coldat$prev_pub)/length(coldat$prev_pub))*100
 
-##------------------------------------ Figure 1--------------------------------------##
-# Figure of proportions on the hardware/software used
 
+
+##------------------------------------ Figure 1--------------------------------------##
+# Figure of proportions on the hardware/software reported
+pdf(height = 9.45, width = 19)
+par(mfrow=c(1,2))
 props   <- c(specModel, camModel, specLight, CamLight, drk_std, white_stdspec, specAVG, camAVG)
 N_props <- c((specs+both), (cam+both), length(DatSpec$light_source), length(DatCam$light_source), length(DatSpec$dark_std), length(DatSpec$white_stdspec), length(DatSpec$specpix_avg), length(DatCam$specpix_avg))
-names   <- paste("C", seq(1:8), sep = "")
-dat     <- t(data.frame(props))
+
+names   <- c("Spec", "Cam", "Spec L", "Pix Avg"," Cam L"," Wt Std", "Spec Avg", "Drk Std")
+dat     <- t(arrange(data.frame(props, N_props), props, decreasing = TRUE))
 colnames(dat) <- names
 
-barplot(dat, ylim = c(0,100), ylab = "Percentages of studies reporting", xlab = "Criteria", col = "gray") -> bp.out
+barplot(dat[1,], ylim = c(0,100), ylab = "Percentage of studies reporting criteria", xlab = "Criteria", col = "gray", space = 0.30, cex.names = 0.72, mgp = c(2.5,0.5,0), cex.axis = 1.2, cex.lab = 1.5) -> bp.out
 abline(h = 0, lwd = 2)
-text(N_props, x = bp.out, y = 98)
+text(dat[2,], x = bp.out, y = 98)
+text(paste(round(dat[1,], digits = 0), "%", sep = ""), x = bp.out, y = round(dat[1,], digits = 0)*0.5)
+mtext("a)", adj = -0.10, padj = -1, cex = 2)
 
+
+props_analy   <- c(prop_irrad, prop_spvismod, propvis_mod_param, prop_adap, prop_qcatch, prop_bkg, prop_noise)
+
+N_props_analy <- c(length(DatSpec$irrad_type[! is.na(DatSpec$irrad_type)]), length(DatSpec$vis_mod_sp[! is.na(DatSpec$vis_mod_sp)]), length(DatSpec$vis_mod_param[! is.na(DatSpec$vis_mod_param)]), length(DatSpec$vis_mod_adapt[! is.na(DatSpec$vis_mod_adapt)]), length(DatSpec$vis_mod_qcatch[! is.na(DatSpec$vis_mod_qcatch)]), length(DatSpec$vis_mod_bkg[! is.na(DatSpec$vis_mod_bkg)]), length(DatSpec$vis_mod_noise_type[! is.na(DatSpec$vis_mod_noise_type)]))
+
+dat_analy     <- t(arrange(data.frame(props_analy, N_props_analy), props_analy, decreasing = TRUE))
+
+names_analy   <- c("SpRep", "Bkg", "Irrad", "Qcatch","Noise"," ChrAdapt", "ModPara")
+colnames(dat_analy) <- names_analy
+
+barplot(dat_analy[1,], ylim = c(0,100), ylab = "Percentage of studies reporting criteria", xlab = "Criteria", col = "gray", space = 0.30, cex.names = 0.72, mgp = c(2.5,0.5,0), cex.axis = 1.2, cex.lab = 1.5) -> bp.out
+abline(h = 0, lwd = 2)
+text(dat_analy[2,], x = bp.out, y = 98)
+text(paste(round(dat_analy[1,], digits = 0), "%", sep = ""), x = bp.out, y = round(dat_analy[1,], digits = 0)*0.5)
+mtext("b)", adj = -0.10, padj = -1, cex = 2)
+
+dev.off()
