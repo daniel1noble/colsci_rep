@@ -80,7 +80,7 @@ dist    <- (sum(DatSpec$spec_dist)/nrow(DatSpec))*100
 
 ## Of colormetric studies how many defined their colormetrics?
 
-col_def <- sum(coldat$colmetric_def, na.rm = TRUE)/(length(coldat$colmetric_def[!is.na(coldat$colmetric_def)]))
+col_def <- (sum(coldat$colmetric_def, na.rm = TRUE)/(length(coldat$colmetric_def[!is.na(coldat$colmetric_def)])))*100
 
 ## How did studies fair in their reporting of visual models?
 prop_irrad <- (sum(DatSpec$irrad_type[! is.na(DatSpec$irrad_type)])/length(DatSpec$irrad_type[! is.na(DatSpec$irrad_type)]))*100 # Note that there are a few studies under "multiple" that need to be checked because irrad_type is NA and yet the visual model they report is not given. We should check these.
@@ -91,9 +91,19 @@ prop_spvismod <- (sum(DatSpec$vis_mod_sp[! is.na(DatSpec$vis_mod_sp)])/length(Da
 
 propvis_mod_param <- (sum(DatSpec$vis_mod_param[! is.na(DatSpec$vis_mod_param)])/length(DatSpec$vis_mod_param[! is.na(DatSpec$vis_mod_param)]))*100
 
+## Number of studies referencing other work.
+ref_stud <- (sum(coldat$prev_pub)/length(coldat$prev_pub))*100
 
 ##------------------------------------ Figure 1--------------------------------------##
 # Figure of proportions on the hardware/software used
 
 props   <- c(specModel, camModel, specLight, CamLight, drk_std, white_stdspec, specAVG, camAVG)
-N_props <- c((specs+both), (cam+both), length(DatSpec$light_source), length(DatCam$light_source), )
+N_props <- c((specs+both), (cam+both), length(DatSpec$light_source), length(DatCam$light_source), length(DatSpec$dark_std), length(DatSpec$white_stdspec), length(DatSpec$specpix_avg), length(DatCam$specpix_avg))
+names   <- paste("C", seq(1:8), sep = "")
+dat     <- t(data.frame(props))
+colnames(dat) <- names
+
+barplot(dat, ylim = c(0,100), ylab = "Percentages of studies reporting", xlab = "Criteria", col = "gray") -> bp.out
+abline(h = 0, lwd = 2)
+text(N_props, x = bp.out, y = 98)
+
