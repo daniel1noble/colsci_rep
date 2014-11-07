@@ -4,3 +4,6 @@
 *docs/.Rhistory
 *.log
 *.md
+*.docx
+*.pdf
+*docs/figure
