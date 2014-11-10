@@ -102,7 +102,9 @@ prop_noise <- (sum(DatSpec$vis_mod_noise_type[! is.na(DatSpec$vis_mod_noise_type
 ## Number of studies referencing other work.
 ref_stud <- (sum(coldat$prev_pub)/length(coldat$prev_pub))*100
 
+## Percentage of showing reflectance figures
 
+fig <- (sum(DatSpec$refl_fig)/length(DatSpec$refl_fig))*100
 
 ##------------------------------------ Figure 1--------------------------------------##
 # Figure of proportions on the hardware/software reported
