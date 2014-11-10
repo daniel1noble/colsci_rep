@@ -108,7 +108,7 @@ ref_stud <- (sum(coldat$prev_pub)/length(coldat$prev_pub))*100
 # Figure of proportions on the hardware/software reported
 setwd(paste(getwd(), "/output/figures", sep = ""))
 
-pdf(height = 6.30, width = 12.40)
+pdf(file = "figure1.pdf", height = 6.30, width = 12.40)
 par(mfrow=c(1,2))
 props   <- c(specModel, camModel, specLight, CamLight, drk_std, white_stdspec, specAVG, camAVG)
 N_props <- c((specs+both), (cam+both), length(DatSpec$light_source), length(DatCam$light_source), length(DatSpec$dark_std), length(DatSpec$white_stdspec), length(DatSpec$specpix_avg), length(DatCam$specpix_avg))
