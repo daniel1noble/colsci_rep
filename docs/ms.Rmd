@@ -62,8 +62,6 @@ text(dat[2,], x = bp.out, y = 98)
 text(paste(round(dat[1,], digits = 0), "%", sep = ""), x = bp.out, y = round(dat[1,], digits = 0)*0.5)
 mtext("a)", adj = -0.10, padj = -1, cex = 2)
 
-
-<<<<<<< HEAD
 props_analy   <- c(prop_irrad, prop_spvismod, propvis_mod_param, prop_adap, prop_qcatch, prop_bkg, prop_noise)
 
 N_props_analy <- c(length(DatSpec$irrad_type[! is.na(DatSpec$irrad_type)]), length(DatSpec$vis_mod_sp[! is.na(DatSpec$vis_mod_sp)]), length(DatSpec$vis_mod_param[! is.na(DatSpec$vis_mod_param)]), length(DatSpec$vis_mod_adapt[! is.na(DatSpec$vis_mod_adapt)]), length(DatSpec$vis_mod_qcatch[! is.na(DatSpec$vis_mod_qcatch)]), length(DatSpec$vis_mod_bkg[! is.na(DatSpec$vis_mod_bkg)]), length(DatSpec$vis_mod_noise_type[! is.na(DatSpec$vis_mod_noise_type)]))
