@@ -106,7 +106,9 @@ ref_stud <- (sum(coldat$prev_pub)/length(coldat$prev_pub))*100
 
 ##------------------------------------ Figure 1--------------------------------------##
 # Figure of proportions on the hardware/software reported
-pdf(height = 9.45, width = 19)
+setwd(paste(getwd(), "/output/figures", sep = ""))
+
+pdf(height = 6.30, width = 12.40)
 par(mfrow=c(1,2))
 props   <- c(specModel, camModel, specLight, CamLight, drk_std, white_stdspec, specAVG, camAVG)
 N_props <- c((specs+both), (cam+both), length(DatSpec$light_source), length(DatCam$light_source), length(DatSpec$dark_std), length(DatSpec$white_stdspec), length(DatSpec$specpix_avg), length(DatCam$specpix_avg))
@@ -119,7 +121,7 @@ barplot(dat[1,], ylim = c(0,100), ylab = "Percentage of studies reporting criter
 abline(h = 0, lwd = 2)
 text(dat[2,], x = bp.out, y = 98)
 text(paste(round(dat[1,], digits = 0), "%", sep = ""), x = bp.out, y = round(dat[1,], digits = 0)*0.5)
-mtext("a)", adj = -0.10, padj = -1, cex = 2)
+mtext("a)", adj = -0.15, padj = -1, cex = 2)
 
 
 props_analy   <- c(prop_irrad, prop_spvismod, propvis_mod_param, prop_adap, prop_qcatch, prop_bkg, prop_noise)
@@ -135,6 +137,8 @@ barplot(dat_analy[1,], ylim = c(0,100), ylab = "Percentage of studies reporting 
 abline(h = 0, lwd = 2)
 text(dat_analy[2,], x = bp.out, y = 98)
 text(paste(round(dat_analy[1,], digits = 0), "%", sep = ""), x = bp.out, y = round(dat_analy[1,], digits = 0)*0.5)
-mtext("b)", adj = -0.10, padj = -1, cex = 2)
+mtext("b)", adj = -0.15, padj = -1, cex = 2)
 
 dev.off()
+
+setwd("../..")
