@@ -9,7 +9,7 @@
 rm(list=ls())
 
 ## Packages. Coded to simplify multiple package installation and loading.
-packages <- c("car", "ggplot2")
+packages <- c("car", "ggplot2", "plyr")
 install.packages(packages)
 sapply(packages, function(x) library(x, character.only = TRUE, verbose = FALSE))
 
