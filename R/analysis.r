@@ -110,36 +110,38 @@ fig <- (sum(DatSpec$refl_fig)/length(DatSpec$refl_fig))*100
 # Figure of proportions on the hardware/software reported
 setwd(paste(getwd(), "/output/figures", sep = ""))
 
-pdf(file = "figure1.pdf", height = 6.30, width = 12.40)
+pdf(file = "figure1.pdf", height = 7, width = 15)
 par(mfrow=c(1,2))
-props   <- c(specModel, camModel, specLight, CamLight, drk_std, white_stdspec, specAVG, camAVG)
-N_props <- c((specs+both), (cam+both), length(DatSpec$light_source), length(DatCam$light_source), length(DatSpec$dark_std), length(DatSpec$white_stdspec), length(DatSpec$specpix_avg), length(DatCam$specpix_avg))
+props   <- c(specModel, camModel, specLight, CamLight, drk_std, white_stdspec, specAVG, camAVG, intTime, angle, dist)
+N_props <- c((specs+both), (cam+both), length(DatSpec$light_source), length(DatCam$light_source), length(DatSpec$dark_std), length(DatSpec$white_stdspec), length(DatSpec$specpix_avg), length(DatCam$specpix_avg), rep(nrow(DatSpec), 3))
 
-names   <- c("Spec", "Cam", "Spec L", "Pix Avg"," Cam L"," Wt Std", "Spec Avg", "Drk Std")
+names   <- c("Spec", "Cam", "SpecL", "PixAvg"," CamL"," WtSd", "SpecAvg",  "IntT", "Angle", "Dist", "DrkSd")
 dat     <- t(arrange(data.frame(props, N_props), props, decreasing = TRUE))
 colnames(dat) <- names
 
-barplot(dat[1,], ylim = c(0,100), ylab = "Percentage of studies reporting criteria", xlab = "Criteria", col = "gray", space = 0.30, cex.names = 0.72, mgp = c(2.5,0.5,0), cex.axis = 1.2, cex.lab = 1.5) -> bp.out
+barplot(dat[1,], ylim = c(0,100), ylab = "Percentage of studies reporting criteria", xlab = "", col = "gray", space = 0.30, cex.names = 0.72, mgp = c(2.5,0.5,0), cex.axis = 1.2, cex.lab = 1.5) -> bp.out
 abline(h = 0, lwd = 2)
 text(dat[2,], x = bp.out, y = 98)
 text(paste(round(dat[1,], digits = 0), "%", sep = ""), x = bp.out, y = round(dat[1,], digits = 0)*0.5)
-mtext("a)", adj = -0.15, padj = -1, cex = 2)
+mtext("a)", adj = -0.13, padj = -1, cex = 2)
 
 
-props_analy   <- c(prop_irrad, prop_spvismod, propvis_mod_param, prop_adap, prop_qcatch, prop_bkg, prop_noise)
+props_analy   <- c(prop_irrad, prop_spvismod,  prop_adap, prop_qcatch, prop_bkg, prop_noise)
 
-N_props_analy <- c(length(DatSpec$irrad_type[! is.na(DatSpec$irrad_type)]), length(DatSpec$vis_mod_sp[! is.na(DatSpec$vis_mod_sp)]), length(DatSpec$vis_mod_param[! is.na(DatSpec$vis_mod_param)]), length(DatSpec$vis_mod_adapt[! is.na(DatSpec$vis_mod_adapt)]), length(DatSpec$vis_mod_qcatch[! is.na(DatSpec$vis_mod_qcatch)]), length(DatSpec$vis_mod_bkg[! is.na(DatSpec$vis_mod_bkg)]), length(DatSpec$vis_mod_noise_type[! is.na(DatSpec$vis_mod_noise_type)]))
+N_props_analy <- c(length(DatSpec$irrad_type[! is.na(DatSpec$irrad_type)]), length(DatSpec$vis_mod_sp[! is.na(DatSpec$vis_mod_sp)]), length(DatSpec$vis_mod_adapt[! is.na(DatSpec$vis_mod_adapt)]), length(DatSpec$vis_mod_qcatch[! is.na(DatSpec$vis_mod_qcatch)]), length(DatSpec$vis_mod_bkg[! is.na(DatSpec$vis_mod_bkg)]), length(DatSpec$vis_mod_noise_type[! is.na(DatSpec$vis_mod_noise_type)]))
 
 dat_analy     <- t(arrange(data.frame(props_analy, N_props_analy), props_analy, decreasing = TRUE))
 
-names_analy   <- c("SpRep", "Bkg", "Irrad", "Qcatch","Noise"," ChrAdapt", "ModPara")
+names_analy   <- c("SpRep", "Bkg", "Irrad", "Qcatch","Noise"," ChrAdapt")
 colnames(dat_analy) <- names_analy
 
-barplot(dat_analy[1,], ylim = c(0,100), ylab = "Percentage of studies reporting criteria", xlab = "Criteria", col = "gray", space = 0.30, cex.names = 0.72, mgp = c(2.5,0.5,0), cex.axis = 1.2, cex.lab = 1.5) -> bp.out
+barplot(dat_analy[1,], ylim = c(0,100), ylab = "", xlab = "", col = "gray", xlim = c(0,10), cex.names = 0.72, mgp = c(2.5,0.5,0), cex.axis = 1.2, cex.lab = 1.5) -> bp.out
 abline(h = 0, lwd = 2)
-text(dat_analy[2,], x = bp.out, y = 98)
+text(dat_analy[2,], x = bp.out, y = 98.7)
 text(paste(round(dat_analy[1,], digits = 0), "%", sep = ""), x = bp.out, y = round(dat_analy[1,], digits = 0)*0.5)
 mtext("b)", adj = -0.15, padj = -1, cex = 2)
+
+mtext("Criteria", side = 1, padj = 3, adj = -0.32, cex = 2)
 
 dev.off()
 
