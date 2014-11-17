@@ -2,7 +2,7 @@ Method,Information,Comment
 Photography,,
 ,Camera type,"Cameras may use different algorithms and sensors, with variable sensitivity."
 ,Camera lens/filters,Selectively filters the light reaching the image sensor.
-,Lighting conditions,
+,Lighting conditions,"Reflectance is dependent on the available light, and no light source is truly spectrally flat. "
 ,Software for processing images,"There is variation between programs, and between versions of individual programs, in the implementation of methods."
 ,Number of pixels averaged,"Pixel sampling influences variation in the data, and also defines the area of interest. "
 ,Colour / white standard,"Standards allows for correction of photos under varying lighting conditions, yet may differ considerably.  "
@@ -11,8 +11,8 @@ Spectrophotometry,,
 ,Spectrophotmeter type and model,Spectrometers vary in their spectral sensitivity and wavelength range.
 ,Light source,"Reflectance is dependent on the available light, and no light source is truly spectrally flat. "
 ,White/dark standard,"Reflectance is a relative measure, and is dependent on the white and dark standards used in a given study. "
-,Software for spectral capture,As above.
-,Number of spectra averaged,"Spectral averaging during or following capture affects measurement precition, primarily through the reduction of noise."
+,Software for spectral capture,"There is variation between programs, and between versions of individual programs, in the implementation of methods."
+,Number of spectra averaged,"Spectral averaging during or following capture affects measurement precision, primarily through the reduction of noise."
 ,Integration time & box-car width,Modifies spectrophotometer sensitivity.
 ,Angle of illumination and capture,"Significantly affects the measured signal, particularly for iridescent, shiny, and/or irregularly shaped objects."
 ,"Distance between light source, measurment surface, and collector","Affects the intensity of available light, and partly defines the size of the sampled area."
