@@ -1,22 +1,22 @@
-Information,Comment
-A) Statistical or colormetric (i.e. 'spectral') analyses,
-"Definitions of spectral measures of hue, saturation, and/or brightness used","There are many commonly used measures of hue (>3) brightness, (>5) and chroma (>12) that vary in meaning, and are often poorly correlated."
-Reflectance spectra of stimuli,"Allows readers to visually inspect the nature and quality of spectral data, independent of further processing."
-,
-B) Visual modelling (representative examples),
-E.g. 1) Colour space (specifics will vary),
-Form of quantum catch (raw or log-transformed),"Determines whether differences in receptor stmulation are proportional to their magnitude, in accordance with the Weber-Fechner law."
-Viewer spectral sensitivity,"Defines the spectral information available to a given viewer at the earliest stage of processing. The function/s should be provided and the details for generating them described (e.g. visual pigment template, opsin lambda max/s, retinal filtering).  "
-Irradience (illuminant) spectrum,"Defines the light available to be reflected by a coloured stimulus. The spectrum should be provided, not merely described, unless it exists as a well-defined standard (e.g., D65 standard daylight)."
-Chromatic adaptation (e.g. von Kries),Models receptor adaptation to given viewing conditions. The function should be specified.
-Background reflectance,"If modelling chromatic adaptation, the background is typically what receptors are assumed to be adapted to. The spectrum should be provided, not merely described (e.g., ""average vegetation background"")."
-E.g. 2) Receptor-noise model (Vorobyev 1998; Vorobyev et al. 2001),
-Form of Qcatch (raw vs log-transform),
-Viewer spectral sensitivity (opsin lambda max & any filtering…),
-Illuminant/irradience,
-Chromatic adaptation (e.g. von Kries),
-Background reflectance,"When asking questions of discriminability at threshold, the background is often taken as the stimulus that a target is being distinguished from. As above, the spectrum should be provided, not merely described."
-Noise type (quantum and/or neural),"Noise may be modelled as being independent of ambient light intensity (i.e. 'neural' noise only; often assumed when modelling in high intensitiy light), or to also account for the random nature of photon absorbtion (i.e. 'quantum' or 'shot' noise; typically included when modelling in low light conditions)."
-Relative receptor density,Noise decreases (hence discrimination ability in that wavelength range improves) with increased relative receptor density.
-Signal-to-noise ratio of receptor/s,"Defines the amount of noise in a given receptor and, hence, partly sets the threshold for the discrimination of two coloured stimuli."
-Weber fraction in receptor/s,"Can be calculated from s/n ratios and receptor density, but we recommend reporting this also given they are often used in an unclear way."
+Method,Information,Comment
+Colorimetric (i.e. 'spectral') analyses,,
+,"Definitions of spectral measures of hue, saturation, and/or brightness used","There are many commonly used measures of hue (>3) brightness, (>5) and chroma (>12) that vary in meaning, and are often poorly correlated."
+,Reflectance spectra of stimuli,"Allows readers to visually inspect the nature and quality of spectral data, independent of further processing."
+,,
+Visual modelling (representative examples),,
+(1) Colour space (specifics will vary),,
+,Form of quantum catch (raw or log-transformed),"Determines whether differences in receptor stmulation are proportional to their magnitude, in accordance with the Weber-Fechner law."
+,Viewer spectral sensitivity,"Defines the spectral information available to a given viewer at the earliest stage of processing. The function/s should be provided and the details for generating them described (e.g. visual pigment template, opsin lambda max/s, retinal filtering).  "
+,Irradience (illuminant) spectrum,"Defines the light available to be reflected by a coloured stimulus. The spectrum should be provided, not merely described, unless it exists as a well-defined standard (e.g., D65 standard daylight)."
+,Chromatic adaptation (e.g. von Kries),Models receptor adaptation to given viewing conditions. The function should be specified.
+,Background reflectance,"If modelling chromatic adaptation, the background is typically what receptors are assumed to be adapted to. The spectrum should be provided, not merely described (e.g., ""average vegetation background"")."
+(2) Receptor-noise model (Vorobyev 1998; Vorobyev et al. 2001),,
+,Form of Qcatch (raw vs log-transform),
+,Viewer spectral sensitivity (opsin lambda max & any filtering…),
+,Illuminant/irradience,
+,Chromatic adaptation (e.g. von Kries),
+,Background reflectance,"When asking questions of discriminability at threshold, the background is often taken as the stimulus that a target is being distinguished from. As above, the spectrum should be provided, not merely described."
+,Noise type (quantum and/or neural),"Noise may be modelled as being independent of ambient light intensity (i.e. 'neural' noise only; often assumed when modelling in high intensitiy light), or to also account for the random nature of photon absorbtion (i.e. 'quantum' or 'shot' noise; typically included when modelling in low light conditions)."
+,Relative receptor density,Noise decreases (hence discrimination ability in that wavelength range improves) with increased relative receptor density.
+,Signal-to-noise ratio of receptor/s,"Defines the amount of noise in a given receptor and, hence, partly sets the threshold for the discrimination of two coloured stimuli."
+,Weber fraction in receptor/s,"Can be calculated from s/n ratios and receptor density, but we recommend reporting this also given they are often used in an unclear way."
