@@ -7,5 +7,3 @@ This repository contains data collected from the literature to assess to quality
 To compile ms, knit to ms.md then in terminal run:
 
 pandoc ms.md -o ms.pdf --bibliography references.bib --csl j-exp-biol.csl -H ms.sty
-
-I'll automate this via makefile or something soon.
