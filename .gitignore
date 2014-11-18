@@ -7,3 +7,4 @@
 *.docx
 *.pdf
 *docs/figure
+*.Rhistory
