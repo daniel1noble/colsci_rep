@@ -5,11 +5,11 @@ Colorimetric (i.e. 'spectral') analyses,,
 ,,
 Visual modelling (representative examples),,
 (1) Colour space (specifics will vary),,
-,Form of quantum catch (raw or log-transformed),"Determines whether differences in receptor stmulation are proportional to their magnitude, in accordance with the Weber-Fechner law."
+,Form of quantum catch (raw or log-transformed),"Determines whether differences in receptor stimulation are proportional to their magnitude, in accordance with the Weber-Fechner law."
 ,Viewer spectral sensitivity,"Defines the spectral information available to a given viewer at the earliest stage of processing. The function/s should be provided and the details for generating them described (e.g. visual pigment template, opsin lambda max/s, retinal filtering).  "
 ,Irradience (illuminant) spectrum,"Defines the light available to be reflected by a coloured stimulus. The spectrum should be provided, not merely described, unless it exists as a well-defined standard (e.g., D65 standard daylight)."
 ,Chromatic adaptation (e.g. von Kries),Models receptor adaptation to given viewing conditions. The function should be specified.
-,Background reflectance,"If modelling chromatic adaptation, the background is typically what receptors are assumed to be adapted to. The spectrum should be provided, not merely described (e.g., ""average vegetation background"")."
+,Background,"If modelling chromatic adaptation, the background is typically what receptors are assumed to be adapted to. The spectrum should be provided, not merely described (e.g., ""average vegetation background"")."
 (2) Receptor-noise model (Vorobyev 1998; Vorobyev et al. 2001),,
 ,Form of Qcatch (raw vs log-transform),
 ,Viewer spectral sensitivity (opsin lambda max & any filtering…),
