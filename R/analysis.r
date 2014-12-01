@@ -40,27 +40,38 @@ camModel  <- (sum(coldat$cam_model, na.rm = TRUE)/(cam+both))*100
 
 ## Of the studies using a spec, what proportion report the light source. Note that column needs to be extracted because it combines cameras and specs
 
-DatSpec   <- subset(coldat, stud_type == 1 |stud_type == 3)
+DatSpec         <- subset(coldat, stud_type == 1 |stud_type == 3)
 
-# Note that we need to change the rows where spec and cemera differ
-specLight <- (sum(DatSpec$light_source)/length(DatSpec$light_source))*100
+#Compute proportions of the various criteria
+propSpec        <- apply(DatSpec[sapply(DatSpec, is.numeric)], 2, function(x) sum(x[! is.na(x)])/length(x[! is.na(x)])*100)
+
+lenthSpec        <- apply(DatSpec[sapply(DatSpec, is.numeric)], 2, function(x) length(x[! is.na(x)]))
+
+#Extract only the rows we are interested in using
+
+criteriaSpec <- c("light_source","specpix_avg","dark_std", "white_stdspec", "int_time", "spec_angle", "spec_dist", "irrad_type", "vis_mod", "vis_mod_sp", "vis_mod_param", "vis_mod_adapt", "vis_mod_qcatch", "vis_mod_bkg", "vis_mod_noise_type", "refl_fig")
+
+propSpec_fin <- propSpec[criteriaSpec]
+
+lenthSpec_fin <- lenthSpec[criteriaSpec]
+
+names(propSpec_fin) <- paste("prop", names(propSpec_fin), sep = "_")
+names(lenthSpec_fin) <- paste("prop", names(lenthSpec_fin), sep = "_")
 
 ## Of the studies using a cam, what proportion report the light source. Note that column needs to be extracted because it combines cameras and specs
 
 DatCam    <- subset(coldat, stud_type == 2 |stud_type == 3)
-CamLight  <- (sum(DatCam$light_source, na.rm = TRUE)/length(DatCam$light_source))*100
 
-## Of studies spec'ing what proportion report a dark standard
-drk_std       <- (sum(DatSpec$dark_std)/(length(DatSpec$dark_std)))*100
-white_stdspec <- (sum(DatSpec$white_stdspec)/length(DatSpec$white_stdspec))*100
+#Compute various proportions
+propCam   <- apply(DatCam[sapply(DatCam, is.numeric)], 2, function(x) sum(x[! is.na(x)])/length(x[! is.na(x)])*100)
 
-## What proportion of studies specing report the num of specs averaged
+lenthCam        <- apply(DatCam[sapply(DatCam, is.numeric)], 2, function(x) length(x[! is.na(x)]))
 
-specAVG <- (sum(DatSpec$specpix_avg)/length(DatSpec$specpix_avg))*100
+criteriaCam <- c("light_source", "specpix_avg")
 
-## What proportion of studies using a camera report the num of pixs averaged
+propCam_fin   <- propCam[criteriaCam]
 
-camAVG  <- (sum(DatCam$specpix_avg)/length(DatCam$specpix_avg))*100
+lengthCam_fin <- lenthCam[criteriaCam]
 
 ##--------------------------------------
 ## How do studies analyse colour?
@@ -68,12 +79,6 @@ analysisType <- table(coldat$analysis_type)
 
 ## How about just spec studies because they can do visual modelling, or colorimetric
 analysisTypeSpec <- table(DatSpec$analysis_type)
-
-## What proportion of spec studies reported 1) the integration time, spec angle and distance?
-
-intTime <- (sum(DatSpec$int_time)/nrow(DatSpec))*100
-angle   <- (sum(DatSpec$spec_angle)/nrow(DatSpec))*100
-dist    <- (sum(DatSpec$spec_dist)/nrow(DatSpec))*100
 
 ## Of colormetric studies how many defined their colormetrics?
 
@@ -83,28 +88,10 @@ col_def <- (sum(coldat$colmetric_def, na.rm = TRUE)/(length(coldat$colmetric_def
 
 vismod_type <- table(DatSpec$vis_mod_type)
 
-prop_irrad <- (sum(DatSpec$irrad_type[! is.na(DatSpec$irrad_type)])/length(DatSpec$irrad_type[! is.na(DatSpec$irrad_type)]))*100 # Note that there are a few studies under "multiple" that need to be checked because irrad_type is NA and yet the visual model they report is not given. We should check these.
-
-prop_vismod <- (sum(DatSpec$vis_mod[! is.na(DatSpec$vis_mod)])/length(DatSpec$vis_mod[! is.na(DatSpec$vis_mod)]))*100
-
-prop_spvismod <- (sum(DatSpec$vis_mod_sp[! is.na(DatSpec$vis_mod_sp)])/length(DatSpec$vis_mod_sp[! is.na(DatSpec$vis_mod_sp)]))*100
-
-propvis_mod_param <- (sum(DatSpec$vis_mod_param[! is.na(DatSpec$vis_mod_param)])/length(DatSpec$vis_mod_param[! is.na(DatSpec$vis_mod_param)]))*100
-
-prop_adap <- (sum(DatSpec$vis_mod_adapt[! is.na(DatSpec$vis_mod_adapt)])/length(DatSpec$vis_mod_adapt[! is.na(DatSpec$vis_mod_adapt)]))*100
-
-prop_qcatch <- (sum(DatSpec$vis_mod_qcatch[! is.na(DatSpec$vis_mod_qcatch)])/length(DatSpec$vis_mod_qcatch[! is.na(DatSpec$vis_mod_qcatch)]))*100
-
-prop_bkg <- (sum(DatSpec$vis_mod_bkg[! is.na(DatSpec$vis_mod_bkg)])/length(DatSpec$vis_mod_bkg[! is.na(DatSpec$vis_mod_bkg)]))*100
-
-prop_noise <- (sum(DatSpec$vis_mod_noise_type[! is.na(DatSpec$vis_mod_noise_type)])/length(DatSpec$vis_mod_noise_type[! is.na(DatSpec$vis_mod_noise_type)]))*100
+# Note that there are a few studies under "multiple" that need to be checked because irrad_type is NA and yet the visual model they report is not given. We should check these.
 
 ## Number of studies referencing other work.
 ref_stud <- (sum(coldat$prev_pub)/length(coldat$prev_pub))*100
-
-## Percentage of showing reflectance figures
-
-fig <- (sum(DatSpec$refl_fig)/length(DatSpec$refl_fig))*100
 
 ##------------------------------------ Figure 1--------------------------------------##
 # Figure of proportions on the hardware/software reported
@@ -112,11 +99,12 @@ setwd(paste(getwd(), "/output/figures", sep = ""))
 
 pdf(file = "figure1.pdf", height = 7, width = 15)
 par(mfrow=c(1,2))
-props   <- c(specModel, camModel, specLight, CamLight, drk_std, white_stdspec, specAVG, camAVG, intTime, angle, dist)
-N_props <- c((specs+both), (cam+both), length(DatSpec$light_source), length(DatCam$light_source), length(DatSpec$dark_std), length(DatSpec$white_stdspec), length(DatSpec$specpix_avg), length(DatCam$specpix_avg), rep(nrow(DatSpec), 3))
+props   <- c(SpecModel = specModel, CamModel = camModel, propSpec_fin[c("prop_light_source", "prop_specpix_avg", "prop_dark_std", "prop_white_stdspec", "prop_int_time",  "prop_spec_angle", "prop_spec_dist")], propCam_fin)
+N_props <- c(SpecMod= (specs+both), CamMod = (cam+both), lenthSpec_fin[c("prop_light_source", "prop_specpix_avg", "prop_dark_std", "prop_white_stdspec", "prop_int_time",  "prop_spec_angle", "prop_spec_dist")], lengthCam_fin)
+
+dat     <- t(arrange(data.frame(props, N_props), props, decreasing = TRUE))
 
 names   <- c("Spec", "Cam", "SpecL", "PixAvg"," CamL"," WtSd", "SpecAvg",  "IntT", "Angle", "Dist", "DrkSd")
-dat     <- t(arrange(data.frame(props, N_props), props, decreasing = TRUE))
 colnames(dat) <- names
 
 barplot(dat[1,], ylim = c(0,100), ylab = "Percentage of studies reporting criteria", xlab = "", col = "gray", space = 0.30, cex.names = 0.72, mgp = c(2.5,0.5,0), cex.axis = 1.2, cex.lab = 1.5) -> bp.out
