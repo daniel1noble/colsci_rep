@@ -114,9 +114,9 @@ text(paste(round(dat[1,], digits = 0), "%", sep = ""), x = bp.out, y = round(dat
 mtext("a)", adj = -0.13, padj = -1, cex = 2)
 
 
-props_analy   <- c(prop_irrad, prop_spvismod,  prop_adap, prop_qcatch, prop_bkg, prop_noise)
+props_analy   <- propSpec_fin[c("prop_irrad_type","prop_vis_mod_sp", "prop_vis_mod_adapt", "prop_vis_mod_qcatch", "prop_vis_mod_bkg", "prop_vis_mod_noise_type")]
 
-N_props_analy <- c(length(DatSpec$irrad_type[! is.na(DatSpec$irrad_type)]), length(DatSpec$vis_mod_sp[! is.na(DatSpec$vis_mod_sp)]), length(DatSpec$vis_mod_adapt[! is.na(DatSpec$vis_mod_adapt)]), length(DatSpec$vis_mod_qcatch[! is.na(DatSpec$vis_mod_qcatch)]), length(DatSpec$vis_mod_bkg[! is.na(DatSpec$vis_mod_bkg)]), length(DatSpec$vis_mod_noise_type[! is.na(DatSpec$vis_mod_noise_type)]))
+N_props_analy <- lenthSpec_fin[c("prop_irrad_type","prop_vis_mod_sp", "prop_vis_mod_adapt", "prop_vis_mod_qcatch", "prop_vis_mod_bkg", "prop_vis_mod_noise_type")]
 
 dat_analy     <- t(arrange(data.frame(props_analy, N_props_analy), props_analy, decreasing = TRUE))
 
