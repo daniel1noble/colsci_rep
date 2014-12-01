@@ -42,20 +42,14 @@ camModel  <- (sum(coldat$cam_model, na.rm = TRUE)/(cam+both))*100
 
 DatSpec         <- subset(coldat, stud_type == 1 |stud_type == 3)
 
-#Compute proportions of the various criteria
-propSpec        <- apply(DatSpec[sapply(DatSpec, is.numeric)], 2, function(x) sum(x[! is.na(x)])/length(x[! is.na(x)])*100)
-
-lenthSpec        <- apply(DatSpec[sapply(DatSpec, is.numeric)], 2, function(x) length(x[! is.na(x)]))
-
-#Extract only the rows we are interested in using
-
+#Compute proportions of the various criteria. Extract only the rows we are interested in using
 criteriaSpec <- c("light_source","specpix_avg","dark_std", "white_stdspec", "int_time", "spec_angle", "spec_dist", "irrad_type", "vis_mod", "vis_mod_sp", "vis_mod_param", "vis_mod_adapt", "vis_mod_qcatch", "vis_mod_bkg", "vis_mod_noise_type", "refl_fig")
 
-propSpec_fin <- propSpec[criteriaSpec]
+propSpec_fin   <- apply(DatSpec[sapply(DatSpec, is.numeric)], 2, function(x) sum(x[! is.na(x)])/length(x[! is.na(x)])*100)[criteriaSpec]
 
-lenthSpec_fin <- lenthSpec[criteriaSpec]
+lenthSpec_fin  <- apply(DatSpec[sapply(DatSpec, is.numeric)], 2, function(x) length(x[! is.na(x)]))[criteriaSpec]
 
-names(propSpec_fin) <- paste("prop", names(propSpec_fin), sep = "_")
+names(propSpec_fin)  <- paste("prop", names(propSpec_fin), sep = "_")
 names(lenthSpec_fin) <- paste("prop", names(lenthSpec_fin), sep = "_")
 
 ## Of the studies using a cam, what proportion report the light source. Note that column needs to be extracted because it combines cameras and specs
@@ -63,15 +57,12 @@ names(lenthSpec_fin) <- paste("prop", names(lenthSpec_fin), sep = "_")
 DatCam    <- subset(coldat, stud_type == 2 |stud_type == 3)
 
 #Compute various proportions
-propCam   <- apply(DatCam[sapply(DatCam, is.numeric)], 2, function(x) sum(x[! is.na(x)])/length(x[! is.na(x)])*100)
-
-lenthCam        <- apply(DatCam[sapply(DatCam, is.numeric)], 2, function(x) length(x[! is.na(x)]))
 
 criteriaCam <- c("light_source", "specpix_avg")
 
-propCam_fin   <- propCam[criteriaCam]
+propCam_fin  <- apply(DatCam[sapply(DatCam, is.numeric)], 2, function(x) sum(x[! is.na(x)])/length(x[! is.na(x)])*100)[criteriaCam]
 
-lengthCam_fin <- lenthCam[criteriaCam]
+lengthCam_fin <- apply(DatCam[sapply(DatCam, is.numeric)], 2, function(x) length(x[! is.na(x)]))[criteriaCam]
 
 ##--------------------------------------
 ## How do studies analyse colour?
