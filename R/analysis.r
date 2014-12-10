@@ -64,6 +64,8 @@ propCam_fin  <- apply(DatCam[sapply(DatCam, is.numeric)], 2, function(x) sum(x[!
 
 lengthCam_fin <- apply(DatCam[sapply(DatCam, is.numeric)], 2, function(x) length(x[! is.na(x)]))[criteriaCam]
 
+names(propCam_fin) <- paste("prop_", names(propCam_fin), sep ="")
+
 ##--------------------------------------
 ## How do studies analyse colour?
 analysisType <- table(coldat$analysis_type)
@@ -83,6 +85,10 @@ vismod_type <- table(DatSpec$vis_mod_type)
 
 ## Number of studies referencing other work.
 ref_stud <- (sum(coldat$prev_pub)/length(coldat$prev_pub))*100
+
+##Code and data deposition
+
+data <- table(coldat$data)
 
 ##------------------------------------ Figure 1--------------------------------------##
 # Figure of proportions on the hardware/software reported
