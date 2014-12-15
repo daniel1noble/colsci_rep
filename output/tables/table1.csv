@@ -8,11 +8,11 @@ Photography,,
 ,Colour / white standard,"Standards allows for correction of photos under varying lighting conditions, yet may differ considerably.  "
 ,,
 Spectrometry,,
-,Spectrophotmeter type and model,Spectrometers vary in their spectral sensitivity and wavelength range.
+,Spectrometer type and model,Spectrometers vary in their spectral sensitivity and wavelength range.
 ,Light source,"Reflectance is dependent on the available light, and no light source is truly spectrally flat. "
 ,White/dark standard,"Reflectance is a relative measure, and is dependent on the white and dark standards used in a given study. "
 ,Software for spectral capture,"There is variation between programs, and between versions of individual programs, in the implementation of methods."
 ,Number of spectra averaged,"Spectral averaging during or following capture affects measurement precision, primarily through the reduction of noise."
 ,Integration time & box-car width,Modifies spectrophotometer sensitivity.
 ,Angle of illumination and capture,"Significantly affects the measured signal, particularly for iridescent, shiny, and/or irregularly shaped objects."
-,"Distance between light source, measurement surface, and collector","Affects the intensity of available light, and partly defines the size of the sampled area."
+,"Light source, measurement surface, and collector geometry","Affects the intensity of available light, and partly defines the size of the sampled area."
