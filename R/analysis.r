@@ -17,13 +17,6 @@ sapply(packages, function(x) library(x, character.only = TRUE, verbose = FALSE))
 coldat <- read.csv("data/col_data.csv", header = TRUE)
 str(coldat)
 
-## Process data. Remove irrelevant variables for analaysis. 
-## Remove justification columns, which are just simply for our use and complicate analysis
-col_just   <- colnames(coldat)[c(grep("_just", colnames(coldat)))]
-coldat     <- coldat[,! colnames(coldat) %in% col_just][-c(2:13, 35:36)] # Additioally remove details on analysis and details on papers, but keep paper number.
-
-## Things we need to check. The studies categorized as "multiple" Need to make clear what the values (0 or 1) correspond to camera or specs. 
-
 #--------------------------------------------- ANALYSIS -----------------------------------------#
 ## How many studies utilized specs (1), cameras (2), both (3)?
 studytype <- table(coldat$stud_type)
@@ -40,7 +33,7 @@ camModel  <- (sum(coldat$cam_model, na.rm = TRUE)/(cam+both))*100
 
 ## Of the studies using a spec, what proportion report the light source. Note that column needs to be extracted because it combines cameras and specs
 
-DatSpec         <- subset(coldat, stud_type == 1 |stud_type == 3)
+DatSpec   <- subset(coldat, stud_type == 1 |stud_type == 3)
 
 #Compute proportions of the various criteria. Extract only the rows we are interested in using
 criteriaSpec <- c("light_source","specpix_avg","dark_std", "white_stdspec", "int_time", "spec_angle", "spec_dist", "irrad_type", "vis_mod", "vis_mod_sp", "vis_mod_param", "vis_mod_adapt", "vis_mod_qcatch", "vis_mod_bkg", "vis_mod_noise_type", "refl_fig")
