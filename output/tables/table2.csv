@@ -1,4 +1,4 @@
-Method,Information,Comment
+Method,Information to be reported,Reason
 ,Reflectance spectra of stimuli,"Allows readers to visually inspect the nature and quality of spectral data, independent of further processing."
 Colorimetric (i.e. 'spectral') analyses,,
 ,"Definitions of spectral measures of hue, saturation, and/or brightness used","There are many commonly used measures of hue (>3) brightness, (>5) and chroma (>12) that vary in meaning, and are often poorly correlated."
