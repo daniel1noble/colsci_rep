@@ -95,12 +95,20 @@ class(final) <- c('rspec','data.frame')
 final
 }
 
+data<-getspec(lim=c(300,700))
+data <- procspec(data, fixneg = "zero")
+
+plot(data$wl, data$a01distnorm10, type="l")
+lines(data$wl, data$a05boxnorm, lty=2) ### normal one???
+lines(data$wl, data$a12degninety1, lty=3)
+lines(data$wl, data$a16blacknorm, lty=4) ### or normal???
+lines(data$wl, data$a21whitesample1, lty=5)
 
 ## Compare effects on visual model
 library(pavo)
-data <- as.rspec(read.csv("VMdat.csv", header = TRUE))
+data2 <- as.rspec(read.csv("VMdat.csv", header = TRUE))
 
-visMod <- vismodel(data, qcatch = "fi", visual = "avg.uv", illum = "D65", vonkries = TRUE, bkg = "ideal", relative = FALSE)
+visMod <- vismodel(data2, qcatch = "fi", visual = "avg.uv", illum = "D65", vonkries = TRUE, bkg = "ideal", relative = FALSE)
 
 ColDist <- coldist(visMod, vis = "tetra", noise = "neural", n1 = 1, n2 = 4, n3 = 4, n4 = 8, v = 0.1)
 
@@ -112,14 +120,6 @@ rownames(dat2) <- c("dS", "dL")
 ###########
 ## Graph figure 1
 setwd("../output/figures/")
-data<-getspec(lim=c(300,700))
-data <- procspec(data, fixneg = "zero")
-
-plot(data$wl, data$a01distnorm10, type="l")
-lines(data$wl, data$a05boxnorm, lty=2) ### normal one???
-lines(data$wl, data$a12degninety1, lty=3)
-lines(data$wl, data$a16blacknorm, lty=4) ### or normal???
-lines(data$wl, data$a21whitesample1, lty=5)
 
 #### set up par
 quartz("comps", height=6, width=9)
@@ -203,3 +203,5 @@ text(dens, x = bp.out[,1], y = 0.75)
 text("f)", x = 0.5, y = 27, cex = 2)
 box()
 quartz.save(file = "Fig1.pdf", type = "pdf")
+
+setwd("../../")
