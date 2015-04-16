@@ -69,8 +69,6 @@
 ## How did studies fair in their reporting of visual models?
 	vismod_type <- table(DatSpec$vis_mod_type)
 
-# Note that there are a few studies under "multiple" that need to be checked because irrad_type is NA and yet the visual model they report is not given. We should check these.
-
 ## Number of studies referencing other work.
 	ref_stud <- (sum(coldat$prev_pub)/length(coldat$prev_pub))*100
 
