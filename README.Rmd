@@ -9,6 +9,23 @@ This repository contains data collected from the literature to assess to quality
 
 ### Executing code and compiling the manuscript
 
-To compile ms, knit to ms.md then in terminal run:
+To compile ms, knit to ms.md file. First you need to set working directory to the respository
 
+```{r, eval = FALSE, echo = TRUE}
+# Set wd to col_sci repo
+setwd("~/col_sci/")
+
+# Source the knit_doc.R
+source("R/knit_doc.R")
+
+```
+
+This command will generate a markdown file (.md) which can then be used to compile the manuscript in .pdf or .dox using pandoc. In terminal navigate to the "docs/" folder and run:
+
+```{r, eval = FALSE, echo = TRUE}
 pandoc ms.md -o ms.pdf --bibliography references.bib --csl ref_style.csl -H ms.sty
+```
+
+Note that you will need pandoc installed on your computer (http://pandoc.org).
+
+If you have any troubles please don't hesitate to contact the authors: Daniel Noble and Tom White for more information.
