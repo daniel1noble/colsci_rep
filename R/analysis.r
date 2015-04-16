@@ -60,11 +60,14 @@
 ## How do studies analyse colour?
 	analysisType <- table(coldat$analysis_type)
 
-## How about just spec studies because they can do visual modelling, or colorimetric
-	analysisTypeSpec <- table(DatSpec$analysis_type)
+## How many colourmetric studies
+	colorMet <- length(coldat$colmetric_def[!is.na(coldat$colmetric_def)])
 
 ## Of colormetric studies how many defined their colormetrics?
 	col_def <- (sum(coldat$colmetric_def, na.rm = TRUE)/(length(coldat$colmetric_def[!is.na(coldat$colmetric_def)])))*100
+
+## How about just spec studies because they can do visual modelling, or colorimetric
+	analysisTypeSpec <- table(DatSpec$analysis_type)
 
 ## How did studies fair in their reporting of visual models?
 	vismod_type <- table(DatSpec$vis_mod_type)
