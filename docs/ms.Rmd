@@ -1,20 +1,26 @@
 # Reproducible research in the study of biological coloration
 
-Thomas E. White^2,7^, Rhiannon L. Dalrymple^1,7^, Daniel W. A. Noble^2,7^, James C. O’Hanlon ^2,7^, Daniel B. Zurek^5,7^, Kate D. L. Umbers^3,4,6,7^
+Thomas E. White^1,7^, Rhiannon L. Dalrymple^2,7^, Daniel W. A. Noble^1,2,7^, James C. O’Hanlon ^1,7^, Daniel B. Zurek^3,7^, Kate D. L. Umbers^4,5,6,7^
 
-^1^ Evolution & Ecology Research Centre, School of Biological, Earth and Environmental Sciences, University of New South Wales, Kensington, NSW, Australia, 2022 ^2^ Department of Biological Sciences, Macquarie University, North Ryde, NSW, Australia, 2109 ^3^ School of Biological Sciences, University of Wollongong, Wollongong, NSW, Austrlaia 2252 ^4^ Centre for Evolutionary Biology, University of Western Australia, Crawley, WA, Australia 6008 ^5^ Department of Biological Sciences, University of Pittsburgh, Pittsburgh, PA, USA, 15260 ^6^ School of Science and Health, University of Western Sydney Hawkesbury, NSW, Australia 2751
+^1^ Department of Biological Sciences, Macquarie University, North Ryde, NSW, Australia, 2109 ^2^ Evolution & Ecology Research Centre, School of Biological, Earth and Environmental Sciences, University of New South Wales, Kensington, NSW, Australia, 2022 ^3^ Department of Biological Sciences, University of Pittsburgh, Pittsburgh, PA, USA, 15260 ^4^ School of Biological Sciences, University of Wollongong, Wollongong, NSW, Austrlaia 2252 ^5^ Centre for Evolutionary Biology, University of Western Australia, Crawley, WA, Australia 6008 ^6^ School of Science and Health, University of Western Sydney Hawkesbury, NSW, Australia 2751
 
 ^7^ Authors contributed equally and are presented in random order
 
-Corresponding Author: 
+**Corresponding Author:** 
 
 Thomas E. White, Department of Biological Sciences, Macquarie University, North Ryde, NSW, Australia, 2109
 
-Phone: +61 2 9850 6279
+**Phone:** +61 2 9850 6279
 
-E-mail: thomas.white@mq.edu.au
+**E-mail:** thomas.white@mq.edu.au
 
-Keywords: spectrometry, photography, visual ecology, pigment, structural colour, visual modelling, methods 
+**Keywords:** methods, photography, pigment, spectrometry, structural colour, visual ecology, visual modelling  
+
+**Highlights:**
+
+- We review the reproducibility of contemporary studies of biological coloration.
+- Methodological details are often missing, and data are seldom publicly available.
+- We present guidelines for methods reporting, and for improving reproducibility.
 
 \newpage
 
@@ -59,5 +65,8 @@ None of the included studies linked to any form of code. This is not surprising 
 ## Conclusions
 
 Our review of the recent literature highlights some impediments to reproducibility in the study of biological colourationcoloration. The simplest step towards reproducible research is through the comprehensive reporting of methods, yet key information is often unreported (Fig. 1). Here we provide a list of methodological information that we suggest be specified in studies that focus on the spectrometric- or camera-based analysis of colour (Tables 1 & 2). In addition to the suggested information, we also recommend that raw spectra be presented where possible, as these figures allow for the rapid assessment of the nature and quality of the data independent of downstream processing. We also emphasise the importance of explicitly outlining the biological justification underlying all choices for data capture and analysis [@kemp_integrative_2015]. Finally, the public storage of data along with detailed meta-data plays a pivotal role in reproducibility, yet public data storage in studies of colour traits is not yet the norm. We therefore encourage researchers to consider the substantial benefits of publicly archiving their data [@whitlock_data_2011; @piwowar_sharing_2007]. Overall, we hope that our guidelines will encourage researchers to think about the reproducibility of their work and the advantages of increased transparency, which will continue the advance of an exciting era in colour research.
+
+## Acknowledgements
+We thank Rafael Maia, the Morehouse lab, and three anonymous reviewers for valuable discussions and suggestions. TEW and RLD were supported by Australian Postgraduate Awards, and DWAN was supported by an NSERC PGSD and MQRES scholarship.
 
 ## References
