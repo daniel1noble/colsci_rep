@@ -86,7 +86,7 @@
 
 		dat     <- t(arrange(data.frame(props, N_props), props, decreasing = TRUE))
 
-		names   <- c("Spec", "Cam", "SpecL", "PixAvg"," CamL"," WtSd", "SpecAvg",  "IntT", "Angle", "Dist", "DrkSd")
+		names   <- c("Spec", "Cam", "SpecL", "PixAvg"," CamL"," WtSd", "SpecAvg",  "Angle", "IntT", "Dist", "DrkSd")
 		colnames(dat) <- names
 
 		barplot(dat[1,], ylim = c(0,100), ylab = "Percentage of studies reporting criteria", xlab = "", col = "gray", space = 0.30, cex.names = 0.72, mgp = c(2.5,0.5,0), cex.axis = 1.2, cex.lab = 1.5) -> bp.out
