@@ -92,12 +92,11 @@
 		names   <- c("Spec", "Cam", "SpecL", "PixAvg"," CamL"," WtSd", "SpecAvg",  "Angle", "IntT", "Dist", "DrkSd")
 		colnames(dat) <- names
 
-		barplot(dat[1,], ylim = c(0,100), ylab = "Percentage of studies reporting criteria", xlab = "", col = "gray", space = 0.30, cex.names = 0.72, mgp = c(2.5,0.5,0), cex.axis = 1.2, cex.lab = 1.5) -> bp.out
+		barplot(dat[1,], ylim = c(0,120), ylab = "Percentage of studies reporting criteria", xlab = "", col = "gray", space = 0.30, cex.names = 0.72, mgp = c(2.5,0.5,0), cex.axis = 1.2, cex.lab = 1.5, las = 2) -> bp.out
 			abline(h = 0, lwd = 2)
-			text(dat[2,], x = bp.out, y = 98)
+			text(dat[2,], x = bp.out, y = 100)
 			text(paste(round(dat[1,], digits = 0), "%", sep = ""), x = bp.out, y = round(dat[1,], digits = 0)*0.5)
-			mtext("a)", adj = -0.13, padj = -1, cex = 2)
-
+			text(x = bp.out[length(bp.out)], y = 114, "(a)", cex = 2)
 
 		props_analy   <- propSpec_fin[c("prop_irrad_type","prop_vis_mod_sp", "prop_vis_mod_adapt", "prop_vis_mod_qcatch", "prop_vis_mod_bkg", "prop_vis_mod_noise_type")]
 
@@ -108,12 +107,13 @@
 		names_analy   <- c("SpRep", "Bkg", "Irrad", "Qcatch","Noise"," ChrAdapt")
 		colnames(dat_analy) <- names_analy
 
-		barplot(dat_analy[1,], ylim = c(0,100), ylab = "", xlab = "", col = "gray", xlim = c(0,10), cex.names = 0.72, mgp = c(2.5,0.5,0), cex.axis = 1.2, cex.lab = 1.5) -> bp.out
-			abline(h = 0, lwd = 2)
-			text(dat_analy[2,], x = bp.out, y = 98.7)
+		barplot(dat_analy[1,], ylim = c(0,120), ylab = "", xlab = "", col = "gray", xlim = c(0,10), cex.names = 0.72, mgp = c(2.5,0.5,0), cex.axis = 1.2, cex.lab = 1.5, las = 2) -> bp.out
+			arrows(x0 = -1, y0 = 0, y1 = 0, x1 = bp.out[length(bp.out)] + 1, angle = 90, length = 0, lwd = 2)
+			text(dat_analy[2,], x = bp.out, y = 100)
 			text(paste(round(dat_analy[1,], digits = 0), "%", sep = ""), x = bp.out, y = round(dat_analy[1,], digits = 0)*0.5)
-			mtext("b)", adj = -0.15, padj = -1, cex = 2)
+			text(x = bp.out[length(bp.out)], y = 114, "(b)", cex = 2)
 			mtext("Criteria", side = 1, padj = 3, adj = -0.32, cex = 2)
+			
 	dev.off()
 
 	setwd("../..")
