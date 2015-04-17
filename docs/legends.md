@@ -1,10 +1,7 @@
-# Legends
+## Legends
 
-### Figure 1
-The comprehensiveness of methods reporting in the (a) measurement and (b) analysis of biological colouration. Data are drawn from 60 empirical papers across 22 journals. Axis labels correspond to information presented in tables 1 and 2, respectively.  Numbers above bars indicate sample size, as individual parameters may not be relevant to all studies.
+**Figure 1:** The comprehensiveness of methods reporting in the (a) measurement and (b) analysis of biological colouration assessed against a sample of more commonly reported information in Tables 1 and 2. Data are drawn from 60 empirical papers across 22 journals. Numbers above bars indicate sample size, as individual parameters may not be relevant to all studies. Spec, spectrometer model; Cam, camera model; SpecL, spectrometry light source; PixAvg, pixel averaging; CamL, photography light source; WtSd, white standard/s; SpecAvg, number of spectra averaged; IntT, spectrometry integration time; Angle, spectrometry probe-sample angle; Dist, spectrometry probe-sample distance; DrkStd, dark standard/s; SpRep, species of modelled receiver; Bkg, background; Irrad, illuminant; Qcatch, form of quantum catch; Noise, type of noise modelled; ChrAdapt, chromatic adaptation.   
 
-### Table 1
-Information about the capture of colour data that we suggest should be reported in studies of biological colouration, depending on the method/s used.
+**Table 1:** Information about the capture of colour data we suggest be reported. The necessity of particular information will vary depending on a study’s objectives, as will the potential amount of variation in results that may arise from variation in parameter choice. Nonetheless, we suggest these details be provided in the published paper or in meta-data to ensure that studies can be leveraged to their full potential.
 
-### Table 2
-Information about the analysis of colour data that we suggest should be reported in studies of biological colouration. We present guidelines for two of the most common analytical approaches: colorimetrics (i.e. 'spectral' analyses, independent of any visual system), and visual modelling. Approaches to visual modelling are diverse, so the necessity of parameters may vary depending on the method used.      
+**Table 2:** Information about the analysis of colour data we suggest be reported. We suggest guidelines for two of the most common analytical approaches: colourimetrics (i.e. 'spectral' measures of hue, saturation, and/or brightness, independent of any visual system), and visual modelling. Approaches to visual modelling are diverse, so the necessity of parameters may vary depending on the method used.
