@@ -4,29 +4,29 @@
 
 Thomas E. White<sup>1</sup>, Rhiannon L. Dalrymple<sup>2</sup>, Daniel W. A. Noble<sup>1,2</sup>, James C. O’Hanlon<sup>1</sup>, Daniel B. Zurek<sup>3</sup>, Kate D. L. Umbers<sup>4,5,6</sup>
 
-<sup>1</sup> Department of Biological Sciences, Macquarie University, North Ryde, NSW, Australia, 2109 <sup>2</sup> Evolution & Ecology Research Centre, School of Biological, Earth and Environmental Sciences, University of New South Wales, Kensington, NSW, Australia, 2022 <sup>3</sup> Department of Biological Sciences, University of Pittsburgh, Pittsburgh, PA, USA, 15260 <sup>4</sup> School of Biological Sciences, University of Wollongong, Wollongong, NSW, Austrlaia 2252 <sup>5</sup> Centre for Evolutionary Biology, University of Western Australia, Crawley, WA, Australia 6008 <sup>6</sup> School of Science and Health, University of Western Sydney Hawkesbury, NSW, Australia 2751
+<sup>1</sup> Department of Biological Sciences, Macquarie University, North Ryde, NSW, Australia, 2109 <sup>2</sup> Evolution & Ecology Research Centre, School of Biological, Earth and Environmental Sciences, University of New South Wales, Kensington, NSW, Australia, 2022 <sup>3</sup> Department of Biological Sciences, University of Pittsburgh, Pittsburgh, PA, USA, 15260 <sup>4</sup> School of Biological Sciences, University of Wollongong, Wollongong, NSW, Australia 2252 <sup>5</sup> Centre for Evolutionary Biology, University of Western Australia, Crawley, WA, Australia 6008 <sup>6</sup> School of Science and Health, University of Western Sydney Hawkesbury, NSW, Australia 2751
 
 ### Introduction
 This repository contains data collected from the literature to assess to quality of reporting in signal-based colour studies of animal and plant taxa. Our literature search includes studies collected in 2013 from research journals likley to do colour signal research. We also detail important methodological details that ideally should be reported in studies that quantify colour using both spectrophotometry and camera equipment along with important analytical parameters used for visual modelling. 
 
 ### Executing code and compiling the manuscript
 
-To compile ms, knit to ms.md file. First you need to set working directory to the respository
+To compile the manuscript use 'knitr' to knit the ms.Rmd file to a markdown, ms.md file. First you need to set your working directory to this respository and then you can create the markdown file by sourcing the knit_doc.R file in the R folder as follows:
 
 ```{r, eval = FALSE, echo = TRUE}
 # Set wd to col_sci repo
-setwd("~/col_sci/")
+setwd("[INSERT PATH]/colsci_rep/")
 
 # Source the knit_doc.R
 source("R/knit_doc.R")
 ```
 
-This command will generate a markdown file (.md) which can then be used to compile the manuscript in .pdf or .dox using pandoc. In terminal navigate to the "docs/" folder and run:
+This command will generate a markdown file (ms.md) which can then be used to compile the manuscript in .pdf or .dox using pandoc. In terminal navigate to the 'docs/' folder in the colsci_rep repository and run:
 
 ```{r, eval = FALSE, echo = TRUE}
 pandoc ms.md -o ms.pdf --bibliography references.bib --csl ref_style.csl -H ms.sty
 ```
 
-Note that you will need pandoc installed on your computer (http://pandoc.org).
+Note that you will need pandoc and LaTex installed on your computer (http://pandoc.org).
 
 If you have any troubles please don't hesitate to contact the authors: Daniel Noble and Tom White for more information.
