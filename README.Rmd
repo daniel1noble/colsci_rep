@@ -11,7 +11,7 @@ This repository contains data collected from the literature to assess to quality
 
 ### Executing code and compiling the manuscript
 
-To compile the manuscript use 'knitr' to knit the ms.Rmd file to a markdown, ms.md file. First you need to set your working directory to this respository and then you can create the markdown file by sourcing the knit_doc.R file in the R folder as follows:
+To compile the manuscript use 'knitr' to knit the ms.Rmd file to a markdown, ms.md file. This can all be done in the R console. First you need to set your working directory to this respository and then you can create the markdown file by sourcing the knit_doc.R file in the R folder as follows:
 
 ```{r, eval = FALSE, echo = TRUE}
 # Set wd to col_sci repo
