@@ -2,9 +2,9 @@
 
 [![DOI](https://zenodo.org/badge/doi/10.5281/zenodo.16949.svg)](http://dx.doi.org/10.5281/zenodo.16949)
 
-Thomas E. White<sup>1</sup>, Rhiannon L. Dalrymple<sup>2</sup>, Daniel W. A. Noble<sup>1,2</sup>, James C. O’Hanlon<sup>1</sup>, Daniel B. Zurek<sup>3</sup>, Kate D. L. Umbers<sup>4,5,6</sup>
+This paper is now in press, and can be cited as:
 
-<sup>1</sup> Department of Biological Sciences, Macquarie University, North Ryde, NSW, Australia, 2109 <sup>2</sup> Evolution & Ecology Research Centre, School of Biological, Earth and Environmental Sciences, University of New South Wales, Kensington, NSW, Australia, 2022 <sup>3</sup> Department of Biological Sciences, University of Pittsburgh, Pittsburgh, PA, USA, 15260 <sup>4</sup> School of Biological Sciences, University of Wollongong, Wollongong, NSW, Australia 2252 <sup>5</sup> Centre for Evolutionary Biology, University of Western Australia, Crawley, WA, Australia 6008 <sup>6</sup> School of Science and Health, University of Western Sydney Hawkesbury, NSW, Australia 2751
+(White TE, Dalrymple RL, Noble DWA, O’Hanlon JC, Zurek DB, Umbers KDL (2015) Reproducible research in the study of biological colouration. Animal Behaviour, in press)[http://dx.doi.org/10.1016/j.anbehav.2015.05.007]
 
 ### Introduction
 This repository contains data collected from the literature to assess to quality of reporting in signal-based colour studies of animal and plant taxa. Our literature search includes studies collected in 2013 from research journals likley to do colour signal research. We also detail important methodological details that ideally should be reported in studies that quantify colour using both spectrophotometry and camera equipment along with important analytical parameters used for visual modelling. 
