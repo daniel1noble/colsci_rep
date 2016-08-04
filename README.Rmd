@@ -1,6 +1,6 @@
 # Reproducible research in the study of biological coloration
 
-[![DOI](https://zenodo.org/badge/doi/10.5281/zenodo.16949.svg)](http://dx.doi.org/10.5281/zenodo.16949)
+[![DOI](https://zenodo.org/badge/7271/daniel1noble/colsci_rep.svg)](https://zenodo.org/badge/latestdoi/7271/daniel1noble/colsci_rep)
 
 This paper is now published, and can be cited as:
 
